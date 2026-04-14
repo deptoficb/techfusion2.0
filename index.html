@@ -249,20 +249,15 @@ section{padding:100px 6%;}
 .tl-item:nth-child(even) .tl-badge{background:rgba(191,95,255,.07);color:var(--purple);border-color:rgba(191,95,255,.15);}
 
 /* ===== SPONSORS ===== */
-.sponsor-tier{margin-bottom:44px;}
-.sponsor-tier h3{font-family:var(--font-display);font-size:.58rem;letter-spacing:4px;color:var(--muted);margin-bottom:18px;}
-.sponsor-grid{display:flex;flex-wrap:wrap;gap:14px;}
-.sponsor-slot{width:155px;height:78px;background:var(--card);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .35s;position:relative;overflow:hidden;}
-.sponsor-slot::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .3s;}
-.sponsor-slot:hover::before{opacity:.06;}
-.sponsor-slot:hover{border-color:rgba(0,229,255,.3);transform:scale(1.04);}
-.sponsor-slot .placeholder{font-family:var(--font-body);font-size:.68rem;color:var(--muted);text-align:center;padding:8px;position:relative;z-index:1;line-height:1.6;}
-.ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;margin-top:36px;}
-.ticker{display:flex;width:max-content;animation:tick 22s linear infinite;}
-.ticker:hover{animation-play-state:paused;}
-.ticker-item{padding:0 40px;font-family:var(--font-display);font-size:.6rem;letter-spacing:3px;color:var(--muted);white-space:nowrap;}
-.ticker-item span{color:var(--cyan);}
-@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.sponsors-container{display:flex;flex-direction:column;gap:60px;max-width:800px;margin:0 auto;}
+.sponsor-main{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;}
+.sponsor-label{font-family:var(--font-display);font-size:1.2rem;letter-spacing:3px;color:var(--cyan);margin-bottom:10px;font-weight:600;}
+.sponsor-logo-large{width:100%;max-width:400px;min-height:200px;background:var(--card);border:2px solid rgba(0,229,255,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:30px;transition:all .4s;position:relative;overflow:hidden;}
+.sponsor-logo-large::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,255,.05),rgba(191,95,255,.05));opacity:0;transition:opacity .4s;}
+.sponsor-logo-large:hover::before{opacity:1;}
+.sponsor-logo-large:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,229,255,.2);}
+.sponsor-img{max-width:110%;max-height:180px;object-fit:contain;filter:brightness(1.1);transition:transform .4s;border-radius: 20px;}
+.sponsor-logo-large:hover .sponsor-img{transform:scale(1.05);}
 
 /* ===== FAQ ===== */
 #faq{background:var(--bg2);}
@@ -752,23 +747,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 6% 
 <section id="sponsors">
   <div class="section-header reveal">
     <div class="section-tag">SPONSORS</div>
-    <h2 class="section-title">Our <span class="grad">Partners</span></h2>
+    <h2 class="section-title">Our <span class="grad">Sponsors</span></h2>
     <div class="glow-divider"></div>
-    <p class="section-sub">Proudly backed by industry leaders who believe in the next generation of innovators.</p>
+    <p class="section-sub">Proudly powered by our valued sponsors who make this event possible.</p>
   </div>
-  <div class="sponsor-tier reveal"><h3>// Platinum SPONSOR</h3><div class="sponsor-grid"><div class="sponsor-slot" style="width:220px;height:96px;"><div class="placeholder"><br/><small>Revealing soon...</small></div></div></div></div>
-  <div class="sponsor-tier reveal"><h3>// GOLD SPONSORS</h3><div class="sponsor-grid"><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div></div></div>
-  <div class="sponsor-tier reveal"><h3>// SILVER SPONSORS</h3><div class="sponsor-grid"><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div><div class="sponsor-slot"><div class="placeholder">Revealing soon...</div></div></div></div>
-  <div class="ticker-wrap reveal">
-    <div class="ticker">
-      <span class="ticker-item">⚡ <span>PLATINUM SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">🤝 <span>GOLD SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">🌟 <span>SILVER SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">💼 <span>MEDIA PARTNER</span> Revealing soon...</span>
-      <span class="ticker-item">⚡ <span>PLATINUM SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">🤝 <span>GOLD SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">🌟 <span>SILVER SPONSOR</span> Revealing soon...</span>
-      <span class="ticker-item">💼 <span>MEDIA PARTNER</span> Revealing soon...</span>
+
+  <div class="sponsors-container reveal">
+    <!-- Powered By Section -->
+    <div class="sponsor-main">
+      <div class="sponsor-label">Powered By</div>
+      <div class="sponsor-logo-large">
+        <img src="./Images/opq.png" alt="Gold Sponsor" class="sponsor-img">
+      </div>
+    </div>
+
+    <!-- Co-Powered By Section -->
+    <div class="sponsor-main">
+      <div class="sponsor-label">Co-Powered By</div>
+      <div class="sponsor-logo-large">
+        <img src="./Images/mithali.png" alt="Silver Sponsor" class="sponsor-img">
+      </div>
     </div>
   </div>
 </section>
